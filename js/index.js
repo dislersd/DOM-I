@@ -123,3 +123,18 @@ allPs[7].textContent = contactStuff[3];
 
 
 allPs[8].textContent = siteContent['footer']['copyright'];
+
+
+
+//STRETCH GOAL STUFF
+nav.style.backgroundColor = '#efa'
+nav.style.borderRadius = '20px'
+nav.style.borderRadius = '20px'
+const navStyle = nav.style;
+navStyle.padding = '20px'
+navStyle.fontSize = '20px'
+navStyle.fontWeight = 'bold'
+
+const logoStyle = document.getElementById('logo-img').style;
+logoStyle.padding = '20px'
+logoStyle.background = 'skyblue'
