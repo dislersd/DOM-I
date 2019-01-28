@@ -47,7 +47,7 @@ ctaImg.setAttribute('src', siteContent['cta']['img-src'])
 let midImg = document.getElementById('middle-img');
 midImg.setAttribute('src', siteContent['main-content']['middle-img-src'])
 
-
+// NAV
 let navItems = Object.keys(siteContent['nav']);
 let navItemsLooped = []
 
@@ -57,32 +57,59 @@ for (let i = 0; i < navItems.length; i++) {
 
 let nav = document.querySelectorAll('nav a').forEach(function(a, i) {
   a.textContent = navItemsLooped[i];
+  a.style.color = 'green';
 })
 
+
+
+// HEADER
 let h1 = document.querySelector('h1');
 h1.textContent = siteContent['cta']['h1'];
 
 let button = document.querySelector('.cta-text button');
 button.textContent = siteContent['cta']['button'];
 
+
+// MAIN CONTENT
 let mainItems = Object.keys(siteContent['main-content']);
 const h4s = ['Features', 'About', 'Services', 'Product', 'Vision', 'Contact'];
 
-let h4Ps = [];
+let mainStuff = [];
 for (let i = 0; i < mainItems.length; i++) {
-  h4Ps.push(siteContent['main-content'][mainItems[i]]);
+  mainStuff.push(siteContent['main-content'][mainItems[i]]);
   }
 
-console.log(h4Ps);
+console.log(mainStuff);
 
 let topH4s = document.querySelectorAll('h4').forEach( (h4, i) => h4.textContent = h4s[i]);
 
 let featuresP = document.querySelector('.top-content p');
-featuresP.textContent = h4Ps[1];
+featuresP.textContent = mainStuff[1];
 
-let aboutP = document.querySelectorAll('p');
-console.log(aboutP);
+let allPs = document.querySelectorAll('p');
 
-aboutP[1].textContent = h4Ps[3];
+allPs[1].textContent = mainStuff[3];
+
+allPs[2].textContent = mainStuff[6];
+
+allPs[3].textContent = mainStuff[8];
+
+allPs[4].textContent = mainStuff[10];
+
+//CONTACT
+
+let contactItems = Object.keys(siteContent['contact']);
+
+let contactStuff = [];
+for (let i = 0; i < contactItems.length; i++) {
+  contactStuff.push(siteContent['contact'][contactItems[i]]);
+  }
+
+console.log(contactStuff);
+
+allPs[5].textContent = contactStuff[1];
+allPs[6].textContent = contactStuff[2];
+allPs[7].textContent = contactStuff[3];
 
 
+allPs[8].textContent = siteContent['footer']['copyright'];
