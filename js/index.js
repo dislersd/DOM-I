@@ -55,12 +55,23 @@ for (let i = 0; i < navItems.length; i++) {
   navItemsLooped.push(siteContent['nav'][navItems[i]]);
 }
 
-let nav = document.querySelectorAll('nav a').forEach(function(a, i) {
+document.querySelectorAll('nav a').forEach(function(a, i) {
   a.textContent = navItemsLooped[i];
   a.style.color = 'green';
 })
 
+// ADDING NEW A ELEMENT TO NAV USING appendChild()  
+const a = document.createElement('a');
+const nav = document.querySelector('nav')
+nav.appendChild(a);
+const anchors = document.querySelectorAll('a');
+// ADDING TEXT TO THE NEW A ELEMENT
+anchors[6].textContent = 'YO';
 
+// ADDING NEW A ELEMENT TO NAV USING prepend()
+const navP = document.createElement('p')
+nav.prepend(navP);
+document.querySelector('nav p').textContent = 'HI'
 
 // HEADER
 let h1 = document.querySelector('h1');
@@ -79,9 +90,9 @@ for (let i = 0; i < mainItems.length; i++) {
   mainStuff.push(siteContent['main-content'][mainItems[i]]);
   }
 
-console.log(mainStuff);
+// console.log(mainStuff);
 
-let topH4s = document.querySelectorAll('h4').forEach( (h4, i) => h4.textContent = h4s[i]);
+document.querySelectorAll('h4').forEach( (h4, i) => h4.textContent = h4s[i]);
 
 let featuresP = document.querySelector('.top-content p');
 featuresP.textContent = mainStuff[1];
@@ -97,7 +108,6 @@ allPs[3].textContent = mainStuff[8];
 allPs[4].textContent = mainStuff[10];
 
 //CONTACT
-
 let contactItems = Object.keys(siteContent['contact']);
 
 let contactStuff = [];
@@ -105,7 +115,7 @@ for (let i = 0; i < contactItems.length; i++) {
   contactStuff.push(siteContent['contact'][contactItems[i]]);
   }
 
-console.log(contactStuff);
+// console.log(contactStuff);
 
 allPs[5].textContent = contactStuff[1];
 allPs[6].textContent = contactStuff[2];
