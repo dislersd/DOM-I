@@ -59,3 +59,30 @@ let nav = document.querySelectorAll('nav a').forEach(function(a, i) {
   a.textContent = navItemsLooped[i];
 })
 
+let h1 = document.querySelector('h1');
+h1.textContent = siteContent['cta']['h1'];
+
+let button = document.querySelector('.cta-text button');
+button.textContent = siteContent['cta']['button'];
+
+let mainItems = Object.keys(siteContent['main-content']);
+const h4s = ['Features', 'About', 'Services', 'Product', 'Vision', 'Contact'];
+
+let h4Ps = [];
+for (let i = 0; i < mainItems.length; i++) {
+  h4Ps.push(siteContent['main-content'][mainItems[i]]);
+  }
+
+console.log(h4Ps);
+
+let topH4s = document.querySelectorAll('h4').forEach( (h4, i) => h4.textContent = h4s[i]);
+
+let featuresP = document.querySelector('.top-content p');
+featuresP.textContent = h4Ps[1];
+
+let aboutP = document.querySelectorAll('p');
+console.log(aboutP);
+
+aboutP[1].textContent = h4Ps[3];
+
+
